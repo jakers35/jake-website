@@ -1,256 +1,268 @@
-/* styles.css */
-
+/* Base styles */
 body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  color: #333;
-  background-color: #f9f9f9;
-  scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    scroll-behavior: smooth;
 }
 
+/* Header styles */
 header {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 1.5em;
+    margin: 0;
+    font-size: 1.5em;
 }
 
 .burger-icon {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
 }
 
 nav ul li {
-  margin: 0 15px;
+    margin: 0 15px;
 }
 
 nav ul li a {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+    background-color: #34495e;
 }
 
+/* Responsive navigation */
 @media (max-width: 768px) {
-  .burger-icon {
-    display: block;
-  }
+    .burger-icon {
+        display: block;
+    }
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    right: 0;
-    background-color: #4CAF50;
-    padding: 20px;
-  }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        background-color: #2c3e50;
+        padding: 20px;
+    }
 
-  .nav-links.active {
-    display: flex;
-  }
+    .nav-links.active {
+        display: flex;
+    }
 
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-  }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
 
-  nav ul li {
-    margin: 10px 0;
-    text-align: center;
-  }
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
 }
 
+/* Main content styles */
 main {
-  padding: 80px 20px 20px 20px; /* Adjust padding to account for fixed header */
+    padding: 80px 20px 20px 20px; /* Adjust padding to account for fixed header */
 }
 
+/* Section styles */
 section {
-  margin-bottom: 20px;
-  padding: 20px;
-  background: white;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Hero section styles */
 #hero {
-  background: url('https://via.placeholder.com/800x400') no-repeat center center;
-  background-size: cover;
-  padding: 60px 20px;
-  text-align: center;
-  color: white;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: url('https://via.placeholder.com/800x400') no-repeat center center;
+    background-size: cover;
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .hero-content h2 {
-  margin: 0 0 10px;
-  font-size: 2em;
+    margin: 0 0 10px;
+    font-size: 2em;
 }
 
 .hero-content p {
-  margin: 0 0 20px;
-  font-size: 1.2em;
+    margin: 0 0 20px;
+    font-size: 1.2em;
 }
 
 .btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .btn:hover {
-  background-color: #45a049;
+    background-color: #c0392b;
 }
 
+/* Section title and paragraph styles */
 section h2 {
-  margin: 0 0 10px;
-  font-size: 1.8em;
+    margin: 0 0 10px;
+    font-size: 1.8em;
 }
 
 section p {
-  margin: 0 0 10px;
-  font-size: 1.1em;
+    margin: 0 0 10px;
+    font-size: 1.1em;
 }
 
+/* Testimonial styles */
 .testimonial {
-  background-color: #f1f1f1;
-  padding: 10px;
-  margin: 10px 0;
-  border-left: 5px solid #4CAF50;
-  border-radius: 5px;
+    background-color: #ecf0f1;
+    padding: 10px;
+    margin: 10px 0;
+    border-left: 5px solid #e74c3c;
+    border-radius: 5px;
 }
 
 .testimonial span {
-  display: block;
-  margin-top: 5px;
-  font-style: italic;
+    display: block;
+    margin-top: 5px;
+    font-style: italic;
 }
 
+/* Form styles */
 form {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 form label {
-  margin: 10px 0 5px;
+    margin: 10px 0 5px;
 }
 
 form input, form textarea {
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
 }
 
 form button {
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  margin-top: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+    padding: 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 form button:hover {
-  background-color: #45a049;
+    background-color: #c0392b;
 }
 
+/* Social icon styles */
 .social-icons {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .social-icons a {
-  margin: 0 5px;
-  color: #333;
-  text-decoration: none;
-  font-size: 1.5em;
-  transition: color 0.3s;
+    margin: 0 5px;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.3s;
 }
 
 .social-icons a:hover {
-  color: #4CAF50;
+    color: #e74c3c;
 }
 
+/* Footer styles */
 footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
 footer p {
-  margin: 0;
+    margin: 0;
 }
 
 /* Share buttons styles */
 .share-buttons {
-  display: flex;
-  justify-content: space-around;
-  margin: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
 }
 
 .share-buttons .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: opacity 0.3s;
 }
 
 .btn-facebook {
-  background-color: #3b5998;
+    background-color: #3b5998;
 }
 
 .btn-twitter {
-  background-color: #55acee;
+    background-color: #55acee;
 }
 
 .btn-linkedin {
-  background-color: #0077b5;
+    background-color: #0077b5;
 }
 
 .share-buttons .btn i {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 .share-buttons .btn:hover {
-  opacity: 0.8;
+    opacity: 0.8;
 }
