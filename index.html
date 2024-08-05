@@ -1,141 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Mobile Website</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Mobile Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="import" href="main.js">
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Website</h1>
-    <nav>
-      <div class="burger-icon">
-        <i class="fas fa-bars"></i>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#policy">Policy</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <div class="burger-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#policy">Policy</a></li>
+                <li><a href="#ip-locator">IP Locator</a></li>
+                <li><a href="#admin">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h2>Your Journey Starts Here</h2>
+                <p>Discover more about my work and services.</p>
+                <a href="#about" class="btn">Learn More</a>
+            </div>
+        </section>
+        <section id="home">
+            <h2>Home</h2>
+            <p>This is the homepage of my mobile website!</p>
+        </section>
+        <section id="about">
+            <h2>About</h2>
+            <p>Information about me or my business.</p>
+        </section>
+        <section id="services">
+            <h2>Services</h2>
+            <p>Details about the services offered.</p>
+        </section>
+        <section id="facebook-boosting">
+            <h2>Facebook Boosting</h2>
+            <p>Boost your presence on Facebook with our targeted advertising services. Reach more people and grow your audience.</p>
+            <a href="#contact" class="btn">Contact Us for More Info</a>
+        </section>
+        <section id="testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonial">
+                <p>"Great service and support. Highly recommended!"</p>
+                <span>- Happy Client</span>
+            </div>
+            <div class="testimonial">
+                <p>"Professional and efficient. I couldn't ask for more."</p>
+                <span>- Satisfied Customer</span>
+            </div>
+        </section>
+        <section id="policy">
+            <h2>Policy</h2>
+            <p>Details about the privacy policy, terms of service, and other legal information.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <form action="mailto: monisdanny2022@gmail.com" method="post" enctype="text/plain">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit" class="btn">Send</button>
+            </form>
+            <p>Or reach out to me via email at <a href="mailto: monisdanny2022@gmail.com">Click to msg me</a></p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=100078201810074&mibextid=kFxxJD" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.google.com/monisdanny2022@gmail.com" target="_blank"><i class="fab fa-google"></i></a>
+                <a href="mailto: monisdanny2022@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </section>
+        <section id="ip-locator">
+            <h2>Your Location</h2>
+            <p id="ip-info">Fetching your location...</p>
+            <p>Use our Telegram bot to fetch detailed IP location data. Send the command <code>/getip</code> to the bot to retrieve your location details. This feature is only accessible to admins.</p>
+        </section>
+        <section id="admin">
+            <h2>Admin Section</h2>
+            <p>This section is accessible to admins only. <a href="admin.html">Go to Admin Panel</a></p>
+        </section>
+        <section id="share-boosting">
+            <h2>Share This Page</h2>
+            <div class="share-buttons">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank" class="btn btn-facebook">
+                    <i class="fab fa-facebook-f"></i> Share on Facebook
+                </a>
+                <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com&text=Check%20this%20out!" target="_blank" class="btn btn-twitter">
+                    <i class="fab fa-twitter"></i> Share on Twitter
+                </a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://yourwebsite.com&title=Your%20Website%20Title&summary=Your%20website%20description&source=LinkedIn" target="_blank" class="btn btn-linkedin">
+                    <i class="fab fa-linkedin-in"></i> Share on LinkedIn
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script>
+        const apiKey = '1df80b31fab5e5'; // Replace with your actual API key
+        const ipInfoElement = document.getElementById('ip-info');
+        axios.get(`https://ipinfo.io?token=${apiKey}`)
+            .then(response => {
+                const data = response.data;
+                ipInfoElement.textContent = `IP: ${data.ip}, City: ${data.city}, Region: ${data.region}, Country: ${data.country}`;
+            })
+            .catch(error => {
+                ipInfoElement.textContent = 'Could not fetch location data';
+                console.error('Error fetching IP info:', error);
+            });
 
-  <main>
-    <section id="hero">
-      <div class="hero-content">
-        <h2>Your Journey Starts Here</h2>
-        <p>Discover more about my work and services.</p>
-        <a href="#about" class="btn">Learn More</a>
-      </div>
-    </section>
-    <section id="home">
-      <h2>Home</h2>
-      <p>This is the homepage of my mobile website!</p>
-    </section>
-    <section id="about">
-      <h2>About</h2>
-      <p>Information about me or my business.</p>
-    </section>
-    <section id="services">
-      <h2>Services</h2>
-      <p>Details about the services offered.</p>
-    </section>
-    <section id="facebook-boosting">
-      <h2>Facebook Boosting</h2>
-      <p>Boost your presence on Facebook with our targeted advertising services. Reach more people and grow your audience.</p>
-      <a href="#contact" class="btn">Contact Us for More Info</a>
-    </section>
-    <section id="testimonials">
-      <h2>Testimonials</h2>
-      <div class="testimonial">
-        <p>"Great service and support. Highly recommended!"</p>
-        <span>- Happy Client</span>
-      </div>
-      <div class="testimonial">
-        <p>"Professional and efficient. I couldn't ask for more."</p>
-        <span>- Satisfied Customer</span>
-      </div>
-    </section>
-    <section id="policy">
-      <h2>Policy</h2>
-      <p>Details about the privacy policy, terms of service, and other legal information.</p>
-    </section>
-    <section id="contact">
-      <h2>Contact</h2>
-      <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <button type="submit" class="btn">Send</button>
-      </form>
-      <p>Or reach out to me via email at <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.google.com/yourprofile" target="_blank"><i class="fab fa-google"></i></a>
-        <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a>
-      </div>
-    </section>
-    <section id="ip-locator">
-      <h2>Your Location</h2>
-      <p id="ip-info">Fetching your location...</p>
-    </section>
-    <section id="share-boosting">
-      <h2>Share This Page</h2>
-      <div class="share-buttons">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank" class="btn btn-facebook">
-          <i class="fab fa-facebook-f"></i> Share on Facebook
-        </a>
-        <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com&text=Check%20this%20out!" target="_blank" class="btn btn-twitter">
-          <i class="fab fa-twitter"></i> Share on Twitter
-        </a>
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://yourwebsite.com&title=Your%20Website%20Title&summary=Your%20website%20description&source=LinkedIn" target="_blank" class="btn btn-linkedin">
-          <i class="fab fa-linkedin-in"></i> Share on LinkedIn
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2024 My Website. All rights reserved.</p>
-  </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-  <script>
-    const apiKey = '1df80b31fab5e5'; // Replace with your actual API key
-    const ipInfoElement = document.getElementById('ip-info');
-
-    axios.get(`https://ipinfo.io?token=${apiKey}`)
-      .then(response => {
-        const data = response.data;
-        ipInfoElement.textContent = `IP: ${data.ip}, City: ${data.city}, Region: ${data.region}, Country: ${data.country}`;
-      })
-      .catch(error => {
-        ipInfoElement.textContent = 'Could not fetch location data';
-        console.error('Error fetching IP info:', error);
-      });
-
-    // Burger menu toggle
-    document.querySelector('.burger-icon').addEventListener('click', () => {
-      document.querySelector('.nav-links').classList.toggle('active');
-    });
-  </script>
-
-  <!-- Start of Tawk.to Script -->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function(){
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/YOUR_PROPERTY_ID/default';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
-  <!-- End of Tawk.to Script -->
+        // Burger menu toggle
+        document.querySelector('.burger-icon').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+    <!-- Start of Tawk.to Script -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function(){
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/YOUR_PROPERTY_ID/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!-- End of Tawk.to Script -->
 </body>
 </html>
